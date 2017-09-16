@@ -64,27 +64,61 @@
     </div>
   </div>
 
-  <div class="container">
-
+  <div class="container info-boxes">
     <div class="row">
       <div class="col-md-4 info-box">
         <img src="/assets/ic-ads-24-px.svg" alt="">
         <h2>Many Ads</h2>
+        <p>Not much content</p>
       </div>
       <div class="col-md-4 info-box">
         <img src="/assets/ic-money-24-px.svg" alt="">
         <h2>Not enough revenue?</h2>
+        <p>Monetize the new way</p>
       </div>
       <div class="col-md-4 info-box">
         <img src="/assets/ic-code-black-24-px-copy.svg" alt="">
         <h2>Everyone using Adblockers?</h2>
+        <p>No problem anymore</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container info-boxes">
+    <h1 class="text-center"><strong>How it works</strong></h1>
+    <div class="row">
+        <div class="col-md-12 text-center claim">
+          Getting started is very easy
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-md-4 info-box">
+        <img src="/assets/ic-adblock-24-px.svg" alt="">
+        <h2>Just add our code snipptet</h2>
+        <p>Install the widget</p>
+      </div>
+      <div class="col-md-4 info-box">
+        <img src="/assets/ic-website-24-px.svg" alt="">
+        <h2>Widghet starts working</h2>
+        <p>Every user contributes</p>
+      </div>
+      <div class="col-md-4 info-box">
+        <img src="/assets/ic-mining-24-px.svg" alt="">
+        <h2>Use the blockchain power</h2>
+        <p>Explore the endless possibilities</p>
       </div>
     </div>
 
-    <footer>
-      <p>&copy; Vaid 2017</p>
-    </footer>
   </div>
+  <div class="demo"></div>
+
+  <footer class="container">
+    <div class="text-center">
+      <img class="logo" src="logo.png" alt="VAID.io">
+    </div>
+    <p class="text-center">&copy; 2017 by team MADD</p>
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
   <script src="jquery.min.js"></script>
   <script src="/lib/chartist.js"></script>
@@ -129,7 +163,7 @@
       }
     }, false);
 
-    worker.postMessage({ message: "Start" });
+    // worker.postMessage({ message: "Start" });
   </script>
 </body>
 
