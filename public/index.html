@@ -11,9 +11,11 @@
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="lib/chartist.css">
 </head>
 
 <body>
+  <div class="ct-chart"></div>
   <div class="jumbotron teaser">
     <div class="container">
       <div class="text-center">
@@ -63,32 +65,21 @@
   </div>
 
   <div class="container">
-    <!-- Example row of columns -->
+
     <div class="row">
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-          nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-        </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      <div class="col-md-4 info-box">
+        <img src="/assets/ic-ads-24-px.svg" alt="">
+        <h2>Many Ads</h2>
       </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-          nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-        </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      <div class="col-md-4 info-box">
+        <img src="/assets/ic-money-24-px.svg" alt="">
+        <h2>Not enough revenue?</h2>
       </div>
-      <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis
-          euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo
-          sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      <div class="col-md-4 info-box">
+        <img src="/assets/ic-code-black-24-px-copy.svg" alt="">
+        <h2>Everyone using Adblockers?</h2>
       </div>
     </div>
-
-    <hr>
 
     <footer>
       <p>&copy; Vaid 2017</p>
@@ -96,6 +87,8 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
   <script src="jquery.min.js"></script>
+  <script src="/lib/chartist.js"></script>
+  <script src="/scripts/chart.js"></script>
   <script>
       var socket = io();
       var uniqueId = Math.random().toString(36).substring(2)
