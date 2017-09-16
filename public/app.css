@@ -10,6 +10,9 @@ body {
   height: 100vh;
   z-index: 10;
 }
+.container {
+  z-index: 100;
+}
 
 .teaser {
   border-top: 4px solid #ffda2d;
@@ -138,4 +141,10 @@ img.widget {
 footer {
   margin-top: 3rem;
   padding: 2rem;
+}
+
+.cta:hover, .cta:focus, .cta:active {
+  background: #ffda2d;
+  color: #333;
+  outline: none;
 }
