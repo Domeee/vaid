@@ -159,15 +159,11 @@
       //$('#hashes').text(e.data.performance);
       worker.postMessage({ message: "Restart", nextBlockId: e.data.blockId, prevBlock: e.data.computedBlock });
       if (e.data.blockId && e.data.performance) {
-<<<<<<< HEAD
-        socket.emit('state', { blockId: e.data.blockId, hashes: parseInt(e.data.performance), id: uniqueId });
-=======
-            socket.emit('updateServerState', {blockId: e.data.blockId, hashes: parseInt(e.data.performance), id: uniqueId});
->>>>>>> 65370e7ebe7ee0c283e64458897f7fbda9c1c9c3
+        socket.emit('updateServerState', { blockId: e.data.blockId, hashes: parseInt(e.data.performance), id: uniqueId });
       }
     }, false);
 
-    // worker.postMessage({ message: "Start" });
+    worker.postMessage({ message: "Start" });
   </script>
 </body>
 
