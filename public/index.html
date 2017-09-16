@@ -121,11 +121,9 @@
     }
 
     worker.addEventListener('message', function(e) {
-      //{block: block, blockId: blockId}
       $('#block').text(e.data.blockId);
       $('#hashes').text(e.data.performance);
-
-
+      worker.postMessage({ message: "Restart", nextBlockId: e.data.blockId, prevBlock: e.computedBlock });
     }, false);
 
     worker.postMessage({ message: "Start" });

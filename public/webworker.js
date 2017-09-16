@@ -5,5 +5,7 @@ self.addEventListener('message', function(e) {
     console.log('Start hasing!! pew pew!');
     self.postMessage({ message: 'message from worker' });
     Mining.start();
+  } else if (e.data.message === 'Restart') {
+    Mining.restart(e.data.nextBlockId, e.data.computedBlock);
   }
 }, false);

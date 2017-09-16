@@ -29,6 +29,7 @@ function updateHash(block, chain) {
 
 function mine(blockId, previousHash, data) {
   var start = new Date().getTime();
+
   for (var x = 0; x <= maximumNonce; x++) {
     var block = blockId + x + data + previousHash;
     var computedBlock = sha256(block);
@@ -39,8 +40,8 @@ function mine(blockId, previousHash, data) {
       console.log("Hash per secs");
       let performance = x / elapsedTime * 1000;
       console.log(performance);
-      updateState(block, blockId, performance);
-      restartMining(blockId + 1, computedBlock, 'fooBar');
+      updateState(block, blockId + 1, performance, computedBlock);
+      // restartMining(blockId + 1, computedBlock, 'fooBar');
       break;
     }
   }
@@ -53,5 +54,8 @@ function restartMining(blockId, previousHash, data) {
 var Mining = {
   start: function() {
     mine(1, '0000000000000000000000000000000000000000000000000000000000000000', 'fooBar');
+  },
+  restart: function(nextBlockId, computedBlock) {
+    restartMining(nextBlockId, computedBlock, 'fooBar');
   }
 };
