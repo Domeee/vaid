@@ -6,6 +6,6 @@ self.addEventListener('message', function(e) {
     self.postMessage({ message: 'message from worker' });
     Mining.start();
   } else if (e.data.message === 'Restart') {
-    Mining.restart(e.data.nextBlockId, e.data.computedBlock);
+    Mining.restart(e.data.nextBlockId, e.data.prevBlock);
   }
 }, false);

@@ -16,10 +16,10 @@ function sha256(block) {
   return CryptoJS.SHA256(block).toString();
 }
 
-function updateState(block, blockId, performance) {
+function updateState(block, blockId, performance, computedBlock) {
   console.log(block);
   console.log('block ' + block + ' blockId' + blockId);
-  self.postMessage({ block: block, blockId: blockId, performance: performance });
+  self.postMessage({ block: block, blockId: blockId, performance: performance, computedBlock });
 }
 
 function updateHash(block, chain) {
@@ -30,18 +30,15 @@ function updateHash(block, chain) {
 function mine(blockId, previousHash, data) {
   var start = new Date().getTime();
 
-  for (var x = 0; x <= maximumNonce; x++) {
-    var block = blockId + x + data + previousHash;
+  for (var z = 0; z <= maximumNonce; z++) {
+    var block = blockId + z + data + previousHash;
     var computedBlock = sha256(block);
     if (computedBlock.substr(0, difficulty) === pattern) {
-      console.log(x)
+      console.log(z)
       var end = new Date().getTime();
       var elapsedTime = (end - start);
-      console.log("Hash per secs");
-      let performance = x / elapsedTime * 1000;
-      console.log(performance);
+      let performance = z / elapsedTime * 1000;
       updateState(block, blockId + 1, performance, computedBlock);
-      // restartMining(blockId + 1, computedBlock, 'fooBar');
       break;
     }
   }
