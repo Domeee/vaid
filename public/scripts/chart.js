@@ -1,14 +1,14 @@
 var chart = new Chartist.Line('.ct-chart', {
   // labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
   series: [
-    [6, 9, 7, 8, 5, 4, 6, 16, 17, 10, 8, 12],
+    [6, 9, 7, 8, 5, 4, 6, 16, 17, 10, 8, 12, 13, 15],
   ]
 }, {
   low: 0,
   axisX: {
     showGrid: true,
     showLabel: false,
-    offset: 0
+    offset: 1
   },
   axisY: {
     showGrid: false,
