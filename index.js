@@ -1,0 +1,28 @@
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+app.set('port', (process.env.PORT || 3000));
+
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
+
+var count = 0;
+
+io.on('connection', function(socket) {
+  count++;
+  console.log('a user connected');
+  console.log('new user count: ' + count);
+  io.emit('up', count);
+  socket.on('disconnect', function() {
+    count--;
+    console.log('user disconnected');
+    console.log('new user count: ' + count);
+    io.emit('down', count);
+  });
+});
+
+http.listen(3000, function() {
+  console.log('listening on *:3000');
+});

@@ -1,0 +1,12 @@
+{
+  "name": "vaid",
+  "version": "0.0.1",
+  "description": "vaid landing page",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "socket.io": "^2.0.3"
+  }
+}
