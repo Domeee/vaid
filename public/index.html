@@ -21,7 +21,7 @@
       </div>
       <div class="row">
         <div class="col-md-12 text-center claim">
-          Unobtrusive monetisation for websites
+          Unobtrusive monetization for websites
         </div>
       </div>
       <div class="row data">
@@ -119,13 +119,11 @@
       console.log("Sorry, your browser does not support Web Workers...");
     }
 
-    worker.addEventListener('message', function (e) {
-        console.log('Worker said: ', e.data.message);
+    worker.addEventListener('message', function(e) {
+      console.log('Worker said: ', e.data.message);
     }, false);
 
     worker.postMessage({ message: "Start" });
-
-
   </script>
 </body>
 
