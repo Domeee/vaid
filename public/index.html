@@ -118,7 +118,14 @@
     } else {
       console.log("Sorry, your browser does not support Web Workers...");
     }
+
+    worker.addEventListener('message', function (e) {
+        console.log('Worker said: ', e.data.message);
+    }, false);
+
     worker.postMessage({ message: "Start" });
+
+
   </script>
 </body>
 
