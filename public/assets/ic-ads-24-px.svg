@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M0 0h48v48H0z"/>
+        <path fill="#FFDA2D" d="M32 4h12v9H32zM4 4h12v9H4zM18 4h12v27H18zM4 15h12v16H4zM4 33h40v11H4zM32 15h12v16H32z"/>
+        <path fill="#FFF" fill-rule="nonzero" d="M41.5 20.205l-.705-.705L38 22.295 35.205 19.5l-.705.705L37.295 23 34.5 25.795l.705.705L38 23.705l2.795 2.795.705-.705L38.705 23z"/>
+        <path d="M32 17h12v12H32z"/>
+        <path fill="#FFF" fill-rule="nonzero" d="M13.5 5.705L12.795 5 10 7.795 7.205 5l-.705.705L9.295 8.5 6.5 11.295l.705.705L10 9.205 12.795 12l.705-.705L10.705 8.5z"/>
+        <path d="M4 2.5h12v12H4z"/>
+        <g>
+            <path fill="#FFF" fill-rule="nonzero" d="M27.5 35.705L26.795 35 24 37.795 21.205 35l-.705.705 2.795 2.795-2.795 2.795.705.705L24 39.205 26.795 42l.705-.705-2.795-2.795z"/>
+            <path d="M18 32.5h12v12H18z"/>
+        </g>
+    </g>
+</svg>

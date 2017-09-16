@@ -8,39 +8,44 @@ app.set('port', (process.env.PORT || 3000));
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/index.html');
 });
 
 var count = 0;
 var hashes = 0;
 var blockId = 0;
-var ids= [];
+var clients = {};
 
-io.on('connection', function(socket) {
-  count++;
-  console.log('a user connected');
-  console.log('new user count: ' + count);
-  io.emit('up', count);
-  socket.on('disconnect', function() {
-    count--;
-    console.log('user disconnected');
+io.on('connection', function (socket) {
+    var clientId = socket.id;
+    count++;
+    console.log('a user connected');
     console.log('new user count: ' + count);
-    io.emit('down', count);
-  });
-  socket.on('state', function(payload)  {
-    if (!ids.includes(payload.id)) {
-        ids.push(payload.id);
-        hashes += payload.hashes;
-    }
+    io.emit('up', count);
+    socket.on('disconnect', function () {
+        count--;
+        clients[clientId] = 0;
+        console.log('user disconnected '+ clientId);
+        console.log('new user count: ' + count);
+        io.emit('down', count);
+    });
+    socket.on('updateServerState', function (payload) {
 
-    blockId ++;
-    io.emit('update', {blockId: blockId, hashes: hashes});
-  });
+        clients[clientId] = payload.hashes;
+        recalcHashTotal();
+        blockId++;
+        io.emit('notifyClients', {blockId: blockId, hashes: hashes});
+    });
 });
 
+function recalcHashTotal() {
+    hashes = 0;
+    for (const key of Object.keys(clients)) {
+        hashes += clients[key];
+    }
+}
 
-
-http.listen(app.get('port'), function() {
-  console.log('listening on ' + app.get('port'));
+http.listen(app.get('port'), function () {
+    console.log('listening on ' + app.get('port'));
 });
