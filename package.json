@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "vaid landing page",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "deploy": "git push heroku master"
   },
   "dependencies": {
     "express": "^4.15.4",
