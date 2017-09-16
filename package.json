@@ -7,6 +7,7 @@
     "deploy": "git push heroku master"
   },
   "dependencies": {
+    "crypto-js": "^3.1.9-1",
     "express": "^4.15.4",
     "socket.io": "^2.0.3"
   }
