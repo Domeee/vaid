@@ -97,17 +97,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
   <script src="jquery.min.js"></script>
   <script>
+      var socket = io();
+      var uniqueId = Math.random().toString(36).substring(2)
+          + (new Date()).getTime().toString(36);
+
     function renderSessions(sessions) {
       document.querySelector('#sessions').textContent = sessions;
     }
     document.addEventListener("DOMContentLoaded", function(event) {
-      var socket = io();
       socket.on('up', function(count) {
         renderSessions(count);
       });
       socket.on('down', function(count) {
         renderSessions(count);
       });
+      socket.on('update', function (payload){
+          $('#block').text(payload.blockId);
+          $('#hashes').text(payload.hashes);
+      })
     });
 
     //web worker
@@ -121,9 +128,12 @@
     }
 
     worker.addEventListener('message', function(e) {
-      $('#block').text(e.data.blockId);
-      $('#hashes').text(e.data.performance);
+      //$('#block').text(e.data.blockId);
+      //$('#hashes').text(e.data.performance);
       worker.postMessage({ message: "Restart", nextBlockId: e.data.blockId, prevBlock: e.computedBlock });
+      if (e.data.blockId && e.data.performance) {
+            socket.emit('state', {blockId: e.data.blockId, hashes: parseInt(e.data.performance), id: uniqueId});
+      }
     }, false);
 
     worker.postMessage({ message: "Start" });
