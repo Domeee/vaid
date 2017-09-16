@@ -95,6 +95,7 @@
     </footer>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  <script src="jquery.min.js"></script>
   <script>
     function renderSessions(sessions) {
       document.querySelector('#sessions').textContent = sessions;
@@ -120,7 +121,11 @@
     }
 
     worker.addEventListener('message', function (e) {
-        console.log('Worker said: ', e.data.message);
+        //{block: block, blockId: blockId}
+        $('#block-id').text(e.data.blockId);
+        $('#hashes').text(e.data.performance);
+
+
     }, false);
 
     worker.postMessage({ message: "Start" });
