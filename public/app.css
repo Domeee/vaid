@@ -84,13 +84,55 @@ h2 {
 }
 
 .info-boxes {
-  margin-top: 5rem;
+  margin: 5rem auto 8rem;
+  color: #979797;
 }
 
 .demo {
   width: 100vw;
-  min-height: 10vh;
+  min-height: 15vh;
   background: #ffda2d;
+}
+
+.demo h2 {
+  margin-top: 3rem;
+  padding-top: 4rem;
+}
+
+.demo .btn {
+  background: white;
+  color: #333;
+  margin: 3rem 3rem 4rem;
+  cursor: pointer;
+}
+
+.integration {
+  width: 100vw;
+  min-height: 50vh;
+  background: #333;
+  position: relative
+}
+
+.integration h1 {
+  font-size: 36px;
+  color: #979797;
+  font-weight: bold;
+  padding: 6rem 0 1.5rem;
+  font-weight: bold;
+}
+
+.integration p {
+  color: white;
+  font-size: 1.5rem;
+  padding-bottom: 6rem;
+  font-weight: normal;
+}
+
+img.widget {
+  position: absolute;
+  bottom: 0;
+  width: 20vw;
+  right: 3rem;
 }
 
 footer {
