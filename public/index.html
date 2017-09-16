@@ -140,15 +140,18 @@
     var uniqueId = Math.random().toString(36).substring(2)
       + (new Date()).getTime().toString(36);
 
+    var clientCount = 1;
     function renderSessions(sessions) {
       document.querySelector('#sessions').textContent = sessions;
     }
     document.addEventListener("DOMContentLoaded", function(event) {
       socket.on('up', function(count) {
         renderSessions(count);
+        clientCount = count;
       });
       socket.on('down', function(count) {
         renderSessions(count);
+        clientCount = count;
       });
       socket.on('notifyClients', function(payload) {
         $('#block').text(payload.blockId);
@@ -167,15 +170,13 @@
     }
 
     worker.addEventListener('message', function(e) {
-      //$('#block').text(e.data.blockId);
-      //$('#hashes').text(e.data.performance);
-      worker.postMessage({ message: "Restart", nextBlockId: e.data.blockId, prevBlock: e.data.computedBlock });
+      worker.postMessage({ message: "Restart", nextBlockId: e.data.blockId, prevBlock: e.data.computedBlock, clientCount });
       if (e.data.blockId && e.data.performance) {
-        socket.emit('updateServerState', { blockId: e.data.blockId, hashes: parseInt(e.data.performance), id: uniqueId });
+        socket.emit('updateServerState', { blockId: e.data.blockId, hashes: parseInt(e.data.performance, 10), id: uniqueId });
       }
     }, false);
 
-    worker.postMessage({ message: "Start" });
+    worker.postMessage({ message: "Start", clientCount });
   </script>
 </body>
 

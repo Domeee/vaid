@@ -27,14 +27,21 @@ function updateHash(block, chain) {
   $('#block' + block + 'chain' + chain + 'hash').val(sha256(block, chain));
 }
 
-function mine(blockId, previousHash, data) {
+function mine(blockId, previousHash, data, clientCount) {
   var start = new Date().getTime();
 
-  for (var z = 0; z <= maximumNonce; z++) {
+  // optimization through randomization
+  var step = maximumNonce / clientCount;
+  var rnd = getRandomInt(1, clientCount);
+  var upperLimit = step * rnd;
+  var lowerLimit = upperLimit - step;
+
+  for (var z = lowerLimit; z <= upperLimit; z++) {
+    // console.log('z: ' + z + ', lowerLimit: ' + lowerLimit + ', upperLimit' + upperLimit);
     var block = blockId + z + data + previousHash;
     var computedBlock = sha256(block);
     if (computedBlock.substr(0, difficulty) === pattern) {
-      console.log(z)
+      // console.log(z)
       var end = new Date().getTime();
       var elapsedTime = (end - start);
       let performance = z / elapsedTime * 1000;
@@ -44,15 +51,21 @@ function mine(blockId, previousHash, data) {
   }
 }
 
-function restartMining(blockId, previousHash, data) {
-  mine(blockId, previousHash, data)
+function restartMining(blockId, previousHash, data, clientCount) {
+  mine(blockId, previousHash, data, clientCount);
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
 var Mining = {
-  start: function() {
-    mine(1, '0000000000000000000000000000000000000000000000000000000000000000', 'fooBar');
+  start: function(clientCount) {
+    mine(1, '0000000000000000000000000000000000000000000000000000000000000000', 'fooBar', clientCount);
   },
-  restart: function(nextBlockId, computedBlock) {
-    restartMining(nextBlockId, computedBlock, 'fooBar');
+  restart: function(nextBlockId, computedBlock, clientCount) {
+    restartMining(nextBlockId, computedBlock, 'fooBar', clientCount);
   }
 };
