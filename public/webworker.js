@@ -53,6 +53,9 @@ function updateChain(block, chain) {
   for (var x = block; x <= 5; x++) {
     if (x > 1) {
       $('#block'+x+'chain'+chain+'previous').val($('#block'+(x-1).toString()+'chain'+chain+'hash').val());
+    if (e.data.message === 'Start') {
+        console.log('Start hasing!! pew pew!');
+        self.postMessage({message: 'message from worker'});
     }
     updateHash(x, chain);
   }
