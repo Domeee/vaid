@@ -111,7 +111,7 @@
       socket.on('down', function(count) {
         renderSessions(count);
       });
-      socket.on('update', function (payload){
+      socket.on('notifyClients', function (payload){
           $('#block').text(payload.blockId);
           $('#hashes').text(payload.hashes);
       })
@@ -132,7 +132,7 @@
       //$('#hashes').text(e.data.performance);
       worker.postMessage({ message: "Restart", nextBlockId: e.data.blockId, prevBlock: e.computedBlock });
       if (e.data.blockId && e.data.performance) {
-            socket.emit('state', {blockId: e.data.blockId, hashes: parseInt(e.data.performance), id: uniqueId});
+            socket.emit('updateServerState', {blockId: e.data.blockId, hashes: parseInt(e.data.performance), id: uniqueId});
       }
     }, false);
 
