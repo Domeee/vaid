@@ -61,15 +61,25 @@ function updateChain(block, chain) {
 }
 
 function mine(blockId, previousHash, data) {
+  var start = new Date().getTime();
   for (var x = 0; x <= maximumNonce; x++) {
     var block = blockId + x + data + previousHash;
     var computedBlock = sha256(block);
     if (computedBlock.substr(0, difficulty) === pattern) {
       console.log(x)
       updateState(computedBlock);
+      var end = new Date().getTime();
+      var performance = (end - start);
+      console.log("Hash per secs");
+      console.log(performance / x * 1000);
+      restartMining(blockId + 1, computedBlock, 'fooBar');
       break;
     }
   }
+}
+
+function restartMining (blockId, previousHash, data) {
+  mine(blockId, previousHash, data)
 }
 
 var Mining = {
