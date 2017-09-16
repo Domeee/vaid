@@ -38,6 +38,7 @@ function updateState(block, blockId, performance) {
     self.postMessage({block: block, blockId: blockId, performance: performance});
 
 
+
     // set the well background red or green for this block
     // if ($('#block'+block+'chain'+chain+'hash').val().substr(0, difficulty) === pattern) {
     //   $('#block'+block+'chain'+chain+'well').removeClass('well-error').addClass('well-success');
