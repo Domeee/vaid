@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="700" viewBox="0 0 1440 700">
+    <defs>
+        <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#EEE"/>
+            <stop offset="100%" stop-color="#D8D8D8"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path fill="url(#a)" d="M0 0h1440v700H0z" opacity=".203"/>
+        <path fill="#FFDA2D" d="M0 0h1440v5H0z"/>
+        <path stroke="#E0E0E0" d="M112 449l81-182 81 176zM1008.642 577.137l-113.02-92.803 138.056-34.837zM657 209l227-106-209 229zM259 239l-114-9 95 59zM279 537l207-151-18 151zM275.996 442l4 94 87-146zM240.996 288l30 114 44-131z"/>
+        <path stroke="#E0E0E0" d="M193.996 269l49 21-17 49zM115 449.996l166 86-228 10z"/>
+        <path stroke="#E0E0E0" d="M53 545.996l310 38-82-48zM55 407l-103 14.496 103 123zM115.996 446l-61-163M884.996 103l120 59M910.996 431l-12 51h-75"/>
+        <circle cx="885" cy="103" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="1005" cy="162" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="820" cy="482" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="911" cy="431" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="1034" cy="449" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="1009" cy="577" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="898" cy="483" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="259" cy="239" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="241" cy="289" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="194" cy="269" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="57" cy="285" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="315" cy="271" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="145" cy="231" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="226" cy="337" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="272" cy="402" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="275" cy="442" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="367" cy="390" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="675" cy="333" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="657" cy="209" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="281" cy="536" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="363" cy="584" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="469" cy="537" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="486" cy="386" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="113" cy="442" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="55" cy="406" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <circle cx="55" cy="548" r="4" fill="#FFF" stroke="#E0E0E0"/>
+        <path stroke="#E0E0E0" d="M1423.798 199.38l-89.168-53.554 2.64 160.409z"/>
+        <circle cx="1424.428" cy="198.603" r="4" fill="#FFF" stroke="#E0E0E0" transform="rotate(39 1424.428 198.603)"/>
+        <circle cx="1335.867" cy="147.476" r="4" fill="#FFF" stroke="#E0E0E0" transform="rotate(39 1335.867 147.476)"/>
+        <circle cx="1335.064" cy="308.958" r="4" fill="#FFF" stroke="#E0E0E0" transform="rotate(39 1335.064 308.958)"/>
+        <circle cx="116" cy="450" r="4" fill="#FFF" stroke="#E0E0E0"/>
+    </g>
+</svg>

@@ -4,6 +4,11 @@ body {
 
 .teaser {
   border-top: 4px solid #ffda2d;
+  background: url("/assets/header-bg.svg");
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 6rem;
 }
 
 .logo {
@@ -12,21 +17,20 @@ body {
 
 .claim {
   font-size: 28px;
-  font-weight: 300;
   letter-spacing: 0.5px;
   color: #333333;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .data {
-  margin-top: 2rem;
+  margin-top: 20vh;
 }
 
 .data-label {
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0.2px;
-  text-align: left;
+  text-align: center;
   color: #979797;
 }
 
@@ -34,11 +38,18 @@ body {
   font-size: 28px;
   font-weight: 300;
   color: #333333;
+  text-align: center;
 }
 
 .cta {
   background-color: #333333;
-  color: #ffda2d;
+  color: white;
   border-color: #000;
   margin-top: 2rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  margin-top: 15vh;
 }
+
+
+@
