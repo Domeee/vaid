@@ -37,11 +37,9 @@ function mine(blockId, previousHash, data, clientCount) {
   var lowerLimit = upperLimit - step;
 
   for (var z = lowerLimit; z <= upperLimit; z++) {
-    // console.log('z: ' + z + ', lowerLimit: ' + lowerLimit + ', upperLimit' + upperLimit);
     var block = blockId + z + data + previousHash;
     var computedBlock = sha256(block);
     if (computedBlock.substr(0, difficulty) === pattern) {
-      // console.log(z)
       var end = new Date().getTime();
       var elapsedTime = (end - start);
       let performance = z / elapsedTime * 1000;
