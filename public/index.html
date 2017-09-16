@@ -5,22 +5,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Vaid</title>
+  <title>VAID.io</title>
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
     crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
-  <div class="jumbotron">
+  <div class="jumbotron teaser">
     <div class="container">
-      <h1 class="display-3">VAID</h1>
-      <p>
-        <h1>sessions: <span id="sessions"></span></h1>
-        <h1>Hash/s: <span id="hashes"></span></h1>
-        <h1>Current Block ID: <span id="block"></span></h1>
-      </p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      <div class="text-center">
+        <img class="logo" src="logo.png" alt="VAID.io">
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center claim">
+          Unobtrusive monetisation for websites
+        </div>
+      </div>
+      <div class="row data">
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-12 data-label">
+              Sessions
+            </div>
+            <div class="col-md-12 data-value">
+              <span id="sessions"></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-12 data-label">
+              Hash/s
+            </div>
+            <div class="col-md-12 data-value">
+              <span id="hashes">TBD</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-12 data-label">
+              Current Block ID
+            </div>
+            <div class="col-md-12 data-value">
+              <span id="block">TBD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <a class="btn btn-primary btn-lg cta" href="#" role="button">Learn more &raquo;</a>
+      </div>
     </div>
   </div>
 

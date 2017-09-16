@@ -1,0 +1,44 @@
+body {
+  font-family: "Ubuntu";
+}
+
+.teaser {
+  border-top: 4px solid #ffda2d;
+}
+
+.logo {
+  width: 165px;
+}
+
+.claim {
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: #333333;
+  margin-top: 2rem;
+}
+
+.data {
+  margin-top: 2rem;
+}
+
+.data-label {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #979797;
+}
+
+.data-value {
+  font-size: 28px;
+  font-weight: 300;
+  color: #333333;
+}
+
+.cta {
+  background-color: #333333;
+  color: #ffda2d;
+  border-color: #000;
+  margin-top: 2rem;
+}
