@@ -2,6 +2,15 @@ body {
   font-family: "Ubuntu";
 }
 
+.ct-chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
 .teaser {
   border-top: 4px solid #ffda2d;
   background: url("/assets/header-bg.svg");
@@ -13,6 +22,7 @@ body {
 
 .logo {
   width: 165px;
+  z-index: 100;
 }
 
 .claim {
@@ -20,10 +30,12 @@ body {
   letter-spacing: 0.5px;
   color: #333333;
   margin-top: 1rem;
+  z-index: 100;
 }
 
 .data {
   margin-top: 20vh;
+  z-index: 199;
 }
 
 .data-label {
@@ -32,6 +44,7 @@ body {
   letter-spacing: 0.2px;
   text-align: center;
   color: #979797;
+  z-index: 100;
 }
 
 .data-value {
@@ -39,6 +52,7 @@ body {
   font-weight: 300;
   color: #333333;
   text-align: center;
+  z-index: 100;
 }
 
 .cta {
@@ -49,7 +63,37 @@ body {
   padding: 0.5rem 2rem;
   font-size: 1.5rem;
   margin-top: 15vh;
+  z-index: 100;
 }
 
+.info-box img {
+  width: 96px;
+}
 
-@
+.info-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+h2 {
+  text-align: center;
+  padding-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.info-boxes {
+  margin-top: 5rem;
+}
+
+.demo {
+  width: 100vw;
+  min-height: 10vh;
+  background: #ffda2d;
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 2rem;
+}
