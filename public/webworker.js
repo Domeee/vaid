@@ -32,21 +32,25 @@ function sha256(block) {
   return CryptoJS.SHA256(block).toString();
 }
 
-function updateState(block, chain) {
-  console.log(block);
-  // set the well background red or green for this block
-  // if ($('#block'+block+'chain'+chain+'hash').val().substr(0, difficulty) === pattern) {
-  //   $('#block'+block+'chain'+chain+'well').removeClass('well-error').addClass('well-success');
-  // }
-  // else {
-  //   $('#block'+block+'chain'+chain+'well').removeClass('well-success').addClass('well-error');
-  // }
+function updateState(block, blockId, performance) {
+    console.log(block);
+    console.log('block ' + block + ' blockId' + blockId);
+    self.postMessage({block: block, blockId: blockId, performance: performance});
+
+
+    // set the well background red or green for this block
+    // if ($('#block'+block+'chain'+chain+'hash').val().substr(0, difficulty) === pattern) {
+    //   $('#block'+block+'chain'+chain+'well').removeClass('well-error').addClass('well-success');
+    // }
+    // else {
+    //   $('#block'+block+'chain'+chain+'well').removeClass('well-success').addClass('well-error');
+    // }
 }
 
 function updateHash(block, chain) {
   // update the SHA256 hash value for this block
   $('#block'+block+'chain'+chain+'hash').val(sha256(block, chain));
-  updateState(block, chain);
+  //updateState(block, chain);
 }
 
 function updateChain(block, chain) {
@@ -67,12 +71,13 @@ function mine(blockId, previousHash, data) {
     var computedBlock = sha256(block);
     if (computedBlock.substr(0, difficulty) === pattern) {
       console.log(x)
-      updateState(computedBlock);
       var end = new Date().getTime();
-      var performance = (end - start);
-      console.log("Hash per secs");
-      console.log(performance / x * 1000);
-      restartMining(blockId + 1, computedBlock, 'fooBar');
+        var elapsedTime = (end - start);
+        console.log("Hash per secs");
+        let performance = x  /  elapsedTime * 1000;
+        console.log(performance);
+        updateState( block, blockId, performance);
+        restartMining(blockId + 1, computedBlock, 'fooBar');
       break;
     }
   }
