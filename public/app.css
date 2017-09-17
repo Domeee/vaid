@@ -61,7 +61,7 @@ body {
 .cta {
   background-color: #333333;
   color: white;
-  border-color: #000;
+  border-color: #333333;
   margin-top: 2rem;
   padding: 0.5rem 2rem;
   font-size: 1.5rem;
@@ -107,6 +107,12 @@ h2 {
   color: #333;
   margin: 3rem 3rem 4rem;
   cursor: pointer;
+  border: white;
+}
+
+.demo .btn:hover, .btn:focus, .btn:active {
+  background: #333;
+  color: white;
 }
 
 .integration {
@@ -143,8 +149,14 @@ footer {
   padding: 2rem;
 }
 
+footer p {
+  margin-top: 20px;
+}
+
 .cta:hover, .cta:focus, .cta:active {
   background: #ffda2d;
   color: #333;
   outline: none;
+  border-color: #ffda2d;
 }
+
