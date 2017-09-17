@@ -143,6 +143,17 @@ img.widget {
   width: 20vw;
   right: 3rem;
 }
+@media (max-width: 700px) {
+  img.widget {
+    position: relative;
+    left: 0;
+    width: 100%;
+  }/* Kompaktes Layout */
+
+  .cta:first-child {
+    margin-top: 2.5rem;
+  }
+}
 
 footer {
   margin-top: 3rem;
